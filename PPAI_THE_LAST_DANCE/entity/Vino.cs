@@ -20,6 +20,16 @@ namespace PPAI_THE_LAST_DANCE.entity
         private Bodega bodega;
         private List<Varietal> varietales = new List<Varietal>();
 
+        public Vino(DateTime anada, string bodegaActualizacion, string imagenEtiqueta, string nombre, DateTime notaDeCataBodega, decimal precioARS)
+        {
+            this.anada = anada;
+            this.bodegaActualizacion = bodegaActualizacion;
+            this.imagenEtiqueta = imagenEtiqueta;
+            this.nombre = nombre;
+            this.notaDeCataBodega = notaDeCataBodega;
+            this.precioARS = precioARS;
+        }
+
         public void CrearVarietal() { }
         public void New() { }
         public void SetFechaActualizacion(DateTime fecha) => notaDeCataBodega = fecha;

@@ -1,4 +1,5 @@
-﻿using PPAI_THE_LAST_DANCE.entity;
+﻿using PPAI_THE_LAST_DANCE.boundary;
+using PPAI_THE_LAST_DANCE.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,15 @@ namespace PPAI_THE_LAST_DANCE.gestor
         private List<Maridaje> maridajes = new List<Maridaje>();
         private List<TipoUva> tiposUva = new List<TipoUva>();
 
+        public GestorImportadorActVinos(List<Bodega> bodegas, Bodega bodegaSeleccionada, List<Vino> datosVinosImportados, DateTime fechaHoraActual, List<TipoUva> tiposUva)
+        {
+            this.bodegas = bodegas;
+            this.bodegaSeleccionada = bodegaSeleccionada;
+            this.datosVinosImportados = datosVinosImportados;
+            this.fechaHoraActual = fechaHoraActual;
+            this.maridajes = maridajes;
+            this.tiposUva = tiposUva;
+        }
         
 
         public void ActualizarFechaActualizacionBodega() { }
@@ -28,10 +38,19 @@ namespace PPAI_THE_LAST_DANCE.gestor
         public void CrearVino() { }
         public void FinCU() { }
         public DateTime GetFechaHoraActual() => DateTime.Now;
-        public void ObtenerActualizacionesBodega() { }
+        public void ObtenerActualizacionesBodega() 
+        {
+            List<Vino> v = new List<Vino>();
+
+            InterfazAPIBodega interfazapi = new InterfazAPIBodega(v);
+            interfazapi.ObtenerActualizacionesBodega();
+        }
         public void OpcionImportarActualizacionVinos() { }
         public void ObtenerVinosActualizados() { }
-        public void TomarSeleccionBodega() { }
+        public void TomarSeleccionBodega() 
+        {
+            ObtenerActualizacionesBodega();
+        }
     }
 
 }
