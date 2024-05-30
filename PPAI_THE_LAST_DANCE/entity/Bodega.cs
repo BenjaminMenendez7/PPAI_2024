@@ -8,12 +8,15 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class Bodega
     {
-        private string coordenadasUbicacion;
-        private string descripcion;
-        private string historia;
-        private string nombre;
-        private DateTime periodoActualización;
+        public string CoordenadasUbicacion { get; set; }
+        public string Descripcion { get; set; }
+        public string Historia { get; set; }
+        public string Nombre { get; set; }
+        public DateTime PeriodoActualizacion { get; set; }
 
-        
+        public void ContarReseñas() { /* implementación */ }
+        public void MostrarTodosVinos() { /* implementación */ }
+
+        public RegionVitivinicola Region { get; set; }
     }
 }

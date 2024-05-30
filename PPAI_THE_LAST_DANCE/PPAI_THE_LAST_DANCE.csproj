@@ -47,6 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entity\Bodega.cs" />
+    <Compile Include="entity\Certificacion.cs" />
+    <Compile Include="entity\CobroPremium.cs" />
+    <Compile Include="entity\Endofilo.cs" />
+    <Compile Include="entity\Maridaje.cs" />
+    <Compile Include="entity\NovedadEvento.cs" />
+    <Compile Include="entity\Pais.cs" />
+    <Compile Include="entity\Provinicia.cs" />
+    <Compile Include="entity\RegionVitivinicola.cs" />
+    <Compile Include="entity\Reseña.cs" />
+    <Compile Include="entity\Sommelier.cs" />
+    <Compile Include="entity\TipoUva.cs" />
+    <Compile Include="entity\Usuario.cs" />
+    <Compile Include="entity\Varietal.cs" />
+    <Compile Include="entity\Vino.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
