@@ -8,13 +8,12 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class Varietal
     {
-        public string Descripcion { get; set; }
-        public decimal PorcentajeComposicion { get; set; }
+        private string descripcion;
+        private decimal porcentajeComposicion;
 
-        public void ConocerTipoUva() { /* implementación */ }
-        public void EsDeTipoUva() { /* implementación */ }
-        public void MostrarPorcentaje() { /* implementación */ }
+        private Vino vino;
 
-        public TipoUva TipoUva { get; set; }
+        public void New() { }
     }
+
 }

@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace PPAI_THE_LAST_DANCE.entity
 {
-    public class Usuario
+    
+    public class Siguiendo
     {
-        protected string contrasena;
-        protected string nombre;
-        protected bool premium;
+        private DateTime fechaFin;
+        private DateTime fechaInicio;
 
-        public string GetNombre() => nombre;
+        public Enofilo amigo;
+        public Bodega favorito;
     }
 
 }

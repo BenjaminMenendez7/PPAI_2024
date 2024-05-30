@@ -46,17 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="entity\Bodega.cs" />
-    <Compile Include="entity\Certificacion.cs" />
-    <Compile Include="entity\CobroPremium.cs" />
-    <Compile Include="entity\Endofilo.cs" />
+    <Compile Include="boundary\InterfazAPIBodega.cs" />
+    <Compile Include="boundary\PantallaImportadorActVinos.cs" />
+    <Compile Include="entity\Bodegacs.cs" />
+    <Compile Include="entity\Enofilo.cs" />
     <Compile Include="entity\Maridaje.cs" />
-    <Compile Include="entity\NovedadEvento.cs" />
-    <Compile Include="entity\Pais.cs" />
-    <Compile Include="entity\Provinicia.cs" />
-    <Compile Include="entity\RegionVitivinicola.cs" />
-    <Compile Include="entity\Reseña.cs" />
-    <Compile Include="entity\Sommelier.cs" />
+    <Compile Include="entity\Siguiendo.cs" />
     <Compile Include="entity\TipoUva.cs" />
     <Compile Include="entity\Usuario.cs" />
     <Compile Include="entity\Varietal.cs" />
@@ -67,6 +62,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestor\GestorImportadorActVinos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -91,9 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="boundary\" />
-    <Folder Include="gestor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

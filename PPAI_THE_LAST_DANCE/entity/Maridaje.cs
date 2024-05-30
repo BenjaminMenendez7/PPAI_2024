@@ -8,9 +8,12 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class Maridaje
     {
-        public string Descripcion { get; set; }
-        public string Nombre { get; set; }
+        private string descripcion;
+        private string nombre;
 
-        public void MaridaConVino() { /* implementación */ }
+        private List<Bodega> bodegas = new List<Bodega>();
+
+        public bool SosMaridaje() => true;
     }
+
 }

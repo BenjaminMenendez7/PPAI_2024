@@ -8,7 +8,12 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class TipoUva
     {
-        public string Descripcion { get; set; }
-        public string Nombre { get; set; }
+        private string descripcion;
+        private string nombre;
+
+        private List<Vino> vinos = new List<Vino>();
+
+        public bool SosTipoUva() => true;
     }
+
 }

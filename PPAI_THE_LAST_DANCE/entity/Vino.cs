@@ -6,21 +6,28 @@ using System.Threading.Tasks;
 
 namespace PPAI_THE_LAST_DANCE.entity
 {
+    
+
     public class Vino
     {
-        public string Añada { get; set; }
-        public string ImagenEtiqueta { get; set; }
-        public string Nombre { get; set; }
-        public string NotaDeCataBodega { get; set; }
-        public decimal PrecioARS { get; set; }
+        private DateTime anada;
+        private string bodegaActualizacion;
+        private string imagenEtiqueta;
+        private string nombre;
+        private DateTime notaDeCataBodega;
+        private decimal precioARS;
 
-        public void CalcularRanking() { /* implementación */ }
-        public void CompararEtiqueta() { /* implementación */ }
-        public void EsDeBodega() { /* implementación */ }
-        public void EsDeRegionVitivinicola() { /* implementación */ }
+        private Bodega bodega;
+        private List<Varietal> varietales = new List<Varietal>();
 
-        public Bodega Bodega { get; set; }
-        public List<Reseña> Reseñas { get; set; } = new List<Reseña>();
-        public Varietal Varietal { get; set; }
+        public void CrearVarietal() { }
+        public void New() { }
+        public void SetFechaActualizacion(DateTime fecha) => notaDeCataBodega = fecha;
+        public void SetImagenEtiqueta(string imagen) => imagenEtiqueta = imagen;
+        public void SetNotaCata(string nota) { }
+        public void SetPrecio(decimal precio) => precioARS = precio;
+        public bool SosBodega() => true;
+        public bool SosParaActualizar() => true;
     }
+
 }
