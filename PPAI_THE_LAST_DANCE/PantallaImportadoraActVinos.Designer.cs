@@ -1,6 +1,6 @@
 ﻿namespace PPAI_THE_LAST_DANCE
 {
-    partial class Form1
+    partial class PantallaImportadoraActVinos
     {
         /// <summary>
         /// Variable del diseñador necesaria.

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="boundary\InterfazAPIBodega.cs" />
-    <Compile Include="boundary\PantallaImportadorActVinos.cs" />
     <Compile Include="entity\Bodegacs.cs" />
     <Compile Include="entity\Enofilo.cs" />
     <Compile Include="entity\Maridaje.cs" />
@@ -56,11 +55,11 @@
     <Compile Include="entity\Usuario.cs" />
     <Compile Include="entity\Varietal.cs" />
     <Compile Include="entity\Vino.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="PantallaImportadoraActVinos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PantallaImportadoraActVinos.Designer.cs">
+      <DependentUpon>PantallaImportadoraActVinos.cs</DependentUpon>
     </Compile>
     <Compile Include="gestor\GestorImportadorActVinos.cs" />
     <Compile Include="Program.cs" />

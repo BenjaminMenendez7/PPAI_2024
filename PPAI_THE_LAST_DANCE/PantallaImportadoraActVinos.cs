@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace PPAI_THE_LAST_DANCE.boundary
+namespace PPAI_THE_LAST_DANCE
 {
-    public class PantallaImportadorActVinos
+    public partial class PantallaImportadoraActVinos : Form
     {
-        
+        public PantallaImportadoraActVinos()
+        {
+            InitializeComponent();
+        }
 
         public void GrillaVinosImportados() { }
         public void LabelBodegaSeleccionada() { }
@@ -22,5 +29,4 @@ namespace PPAI_THE_LAST_DANCE.boundary
         public void SolicitarSeleccionBodega() { }
         public void TomarSeleccionBodega() { }
     }
-
 }
