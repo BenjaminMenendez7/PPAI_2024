@@ -11,27 +11,31 @@ namespace PPAI_THE_LAST_DANCE.gestor
    
     public class GestorImportadorActVinos
     {
-        private List<Bodega> bodegas = new List<Bodega>();
-        private Bodega bodegaSeleccionada;
-        private List<Vino> datosVinosImportados = new List<Vino>();
-        private DateTime fechaHoraActual;
-        private List<Maridaje> maridajes = new List<Maridaje>();
-        private List<TipoUva> tiposUva = new List<TipoUva>();
+        private List<Bodega> bodegas { get; set; }
+        private Bodega bodegaSeleccionada { get; set; }
+        private List<Vino> datosVinosImportados { get; set; }
+        private DateTime fechaHoraActual { get; set; }
+        private List<Maridaje> maridajes { get; set; }
+        private List<TipoUva> tiposUva { get; set; }
+        private pantImportadoraActVinos pantallaImportadoraActVinos;
 
-        public GestorImportadorActVinos(List<Bodega> bodegas, Bodega bodegaSeleccionada, List<Vino> datosVinosImportados, DateTime fechaHoraActual, List<TipoUva> tiposUva)
+
+        public GestorImportadorActVinos(pantImportadoraActVinos pantalla)
         {
-            this.bodegas = bodegas;
-            this.bodegaSeleccionada = bodegaSeleccionada;
-            this.datosVinosImportados = datosVinosImportados;
-            this.fechaHoraActual = fechaHoraActual;
-            this.maridajes = maridajes;
-            this.tiposUva = tiposUva;
+            pantallaImportadoraActVinos = pantalla;
+            
         }
         
 
         public void ActualizarFechaActualizacionBodega() { }
         public void ActualizarCrearVinos() { }
-        public void BuscarBodegaActualizacionDisp() { }
+        public List<Bodega> BuscarBodegaActualizacionDisp() 
+        {
+            //while (true) // mientras haya bodegas
+            //{
+
+            //}
+        }
         public void BuscarMaridaje() { }
         public void BuscarSeguidoresBodega() { }
         public void CrearDTOvino() { }
@@ -40,12 +44,15 @@ namespace PPAI_THE_LAST_DANCE.gestor
         public DateTime GetFechaHoraActual() => DateTime.Now;
         public void ObtenerActualizacionesBodega() 
         {
-            List<Vino> v = new List<Vino>();
+            //List<Vino> v = new List<Vino>();
 
-            InterfazAPIBodega interfazapi = new InterfazAPIBodega(v);
-            interfazapi.ObtenerActualizacionesBodega();
+            //InterfazAPIBodega interfazapi = new InterfazAPIBodega(v);
+            ///interfazapi.ObtenerActualizacionesBodega();
         }
-        public void OpcionImportarActualizacionVinos() { }
+        public void OpcionImportarActualizacionVinos() 
+        {
+            this.bodegas = BuscarBodegaActualizacionDisp();
+        }
         public void ObtenerVinosActualizados() { }
         public void TomarSeleccionBodega() 
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPAI_THE_LAST_DANCE.entity
 {
-    
+
 
     public class Bodega
     {
@@ -21,6 +21,9 @@ namespace PPAI_THE_LAST_DANCE.entity
         private List<Siguiendo> seguidores = new List<Siguiendo>();
         private List<Maridaje> maridajes = new List<Maridaje>();
 
+
+
+
         public Bodega(string coordenadasUbicacion, string descripcion, DateTime fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion)
         {
             this.coordenadasUbicacion = coordenadasUbicacion;
@@ -28,8 +31,11 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.fechaUltimaActualizacion = fechaUltimaActualizacion;
             this.historia = historia;
             this.nombre = nombre;
-            this.periodoActualizacion=periodoActualizacion;
+            this.periodoActualizacion = periodoActualizacion;
+
         }
+
+        
 
         public string GetNombre() => nombre;
         public string GetCoordenadas() => coordenadasUbicacion;

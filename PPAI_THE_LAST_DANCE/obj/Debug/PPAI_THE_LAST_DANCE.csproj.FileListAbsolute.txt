@@ -8,7 +8,8 @@ C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANC
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CoreCompileInputs.cache
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.exe
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pdb
-C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.PantallaImportadoraActVinos.resources
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CopyComplete
+C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Menu.resources
+C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pantImportadoraActVinos.resources
