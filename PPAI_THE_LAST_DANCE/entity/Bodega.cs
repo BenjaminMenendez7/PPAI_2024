@@ -53,7 +53,20 @@ namespace PPAI_THE_LAST_DANCE.entity
 
 
         
-        public void ActualizarVino() { }
+        public void ActualizarVino(DatosEntrantesSistemaBodega vino)
+        {
+            foreach (Vino v in vinos)
+            {
+                if (v.sosDeBodega(vino))
+                {
+                    v.SetPrecio(vino.PrecioARS);
+                    v.SetNotaCata(vino.NotaDeCataBodega);
+                    v.SetImagenEtiqueta(vino.ImagenEtiqueta);
+                    v.SetFechaActualizacion(DateTime.Now);
+                }
+
+            }
+        }
         public bool EsActualizable()
         {
             if (ValidarFechaActual()) 
@@ -69,7 +82,7 @@ namespace PPAI_THE_LAST_DANCE.entity
             DateTime fecha = DateTime.ParseExact(FechaUltimaActualizacion, "yyyy/MM/dd", null);
             DateTime fechaNueva = fecha.AddMonths(PeriodoActualizacion);
 
-            if (fechaNueva >= DateTime.Now)
+            if (fechaNueva <= DateTime.Now)
             {
                 return true;
             }
@@ -77,6 +90,33 @@ namespace PPAI_THE_LAST_DANCE.entity
                 return false;
             
         }
+
+        public Bodega GetDatos()
+        {
+            return this;
+        }
+
+        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino)
+        {
+            foreach (Vino v in vinos)
+            {
+                if (v.sosDeBodega(vino))
+                {
+                    return true;
+                }
+               
+            }
+            return false;
+        }
+
+        public void crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
+        {
+            Vino newVino = new Vino();
+            this.vinos.Add(newVino.crearVino(vino, maridajes, tiposuva, fechaActual));
+        }
+
+
+
     }
 
 }

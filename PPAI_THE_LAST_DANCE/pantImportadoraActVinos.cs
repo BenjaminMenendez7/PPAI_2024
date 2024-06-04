@@ -60,18 +60,16 @@ namespace PPAI_THE_LAST_DANCE
         }
         public void TomarSeleccionBodega()
         {
-            //este es el metodo que es desencadenado por el boton actualizar
+            int indice = e.RowIndex;
+            if (indice > -1)
+            {
 
+                DataGridViewRow filaSeleccionada = grillaBodegas.Rows[indice];
+                string nombreBod = filaSeleccionada.Cells["nombre"].Value.ToString();
 
-            // pasar los datos de la bodega seleccionada por el usuario
-            //List<Bodega> bs = new List<Bodega>();
-            //Bodega bodsec = new Bodega();
-            //List<Vino> vinoo = new List<Vino>();
-            //DateTime fech = new DateTime();
-            //List<TipoUva> tps = new List<TipoUva>();
+                gestor.TomarSeleccionBodega(nombreBod);
 
-            //GestorImportadorActVinos gestor = new GestorImportadorActVinos(bs, bodsec, vinoo, fech, tps);
-            //gestor.TomarSeleccionBodega();
+            }
         }
 
         

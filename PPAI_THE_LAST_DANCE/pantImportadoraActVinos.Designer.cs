@@ -98,7 +98,7 @@
             // 
             // fecha
             // 
-            this.fecha.HeaderText = "Fecha";
+            this.fecha.HeaderText = "Fecha ultima Actualizacion";
             this.fecha.MinimumWidth = 15;
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;

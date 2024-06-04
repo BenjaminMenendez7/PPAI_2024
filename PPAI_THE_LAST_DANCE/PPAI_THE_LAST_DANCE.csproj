@@ -50,9 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoADatos\ADGestor.cs" />
-    <Compile Include="AccesoADatos\ADVinos.cs" />
-    <Compile Include="boundary\InterfazAPIBodega.cs" />
+    <Compile Include="boundary\InterfaceSistemaBodega.cs" />
     <Compile Include="entity\Bodega.cs" />
     <Compile Include="entity\Enofilo.cs" />
     <Compile Include="entity\Maridaje.cs" />
@@ -76,6 +74,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recursos\DatosEntrantesSistemaBodega.cs" />
+    <Compile Include="recursos\DatosEntrantesVarietales.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

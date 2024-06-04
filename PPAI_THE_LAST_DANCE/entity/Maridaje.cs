@@ -13,7 +13,20 @@ namespace PPAI_THE_LAST_DANCE.entity
 
         private List<Bodega> bodegas = new List<Bodega>();
 
-        public bool SosMaridaje() => true;
+        public Maridaje(string descripcion, string nombre)
+        {
+            this.descripcion = descripcion;
+            this.nombre = nombre;
+        }
+
+        public Boolean SosMaridaje(String m) 
+        {
+            if (this.nombre == m)
+            {
+                return true;
+            }
+            return false;
+        };
     }
 
 }

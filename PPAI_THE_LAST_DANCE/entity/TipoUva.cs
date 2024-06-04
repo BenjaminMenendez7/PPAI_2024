@@ -11,7 +11,15 @@ namespace PPAI_THE_LAST_DANCE.entity
         private string descripcion;
         private string nombre;
 
-        private List<Vino> vinos = new List<Vino>();
+        
+        public TipoUva(string descripcion, string nombre)
+        {
+            this.descripcion = descripcion;
+            this.nombre = nombre;
+        }
+
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
 
         public bool SosTipoUva() => true;
     }
