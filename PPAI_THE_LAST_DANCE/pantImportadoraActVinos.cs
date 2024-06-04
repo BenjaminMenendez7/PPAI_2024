@@ -1,4 +1,5 @@
-﻿using PPAI_THE_LAST_DANCE.gestor;
+﻿using PPAI_THE_LAST_DANCE.entity;
+using PPAI_THE_LAST_DANCE.gestor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,21 +41,23 @@ namespace PPAI_THE_LAST_DANCE
 
         public void MostrarBodegas()
         {
+            List<Bodega> bodegas = gestor.BuscarBodegaActualizacionDisp();
 
+            foreach (Bodega bodega in bodegas)
+            {
+                grillaBodegas.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion);
+            }
 
-
-            //grillaBodegas.Rows.Add(bodega1.GetNombre(), bodega1.GetDescripcion(), bodega1.GetFecha());
-            //grillaBodegas.Rows.Add(bodega2.GetNombre(), bodega2.GetDescripcion(), bodega2.GetFecha());
-            //grillaBodegas.Rows.Add(bodega3.GetNombre(), bodega3.GetDescripcion(), bodega3.GetFecha());
-            //grillaBodegas.Rows.Add(bodega4.GetNombre(), bodega4.GetDescripcion(), bodega4.GetFecha());
-            //grillaBodegas.Rows.Add(bodega5.GetNombre(), bodega5.GetDescripcion(), bodega5.GetFecha());
-
+            SolicitarSeleccionBodega();
 
 
         }
         public void MostrarResumenVinosImportados() { }
 
-        public void SolicitarSeleccionBodega() { }
+        public void SolicitarSeleccionBodega()
+        {
+            btnActualizar.Enabled = true;
+        }
         public void TomarSeleccionBodega()
         {
             //este es el metodo que es desencadenado por el boton actualizar
@@ -95,6 +98,7 @@ namespace PPAI_THE_LAST_DANCE
         private void pantImportadoraActVinos_Load(object sender, EventArgs e)
         {
             this.gestor.OpcionImportarActualizacionVinos();
+            MostrarBodegas();
         }
     }
 }

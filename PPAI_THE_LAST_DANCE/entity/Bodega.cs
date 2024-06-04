@@ -12,7 +12,7 @@ namespace PPAI_THE_LAST_DANCE.entity
     {
         private string coordenadasUbicacion;
         private string descripcion;
-        private DateTime fechaUltimaActualizacion;
+        private string fechaUltimaActualizacion;
         private string historia;
         private string nombre;
         private int periodoActualizacion;
@@ -24,7 +24,7 @@ namespace PPAI_THE_LAST_DANCE.entity
 
 
 
-        public Bodega(string coordenadasUbicacion, string descripcion, DateTime fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion)
+        public Bodega(string coordenadasUbicacion, string descripcion, string fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion)
         {
             this.coordenadasUbicacion = coordenadasUbicacion;
             this.descripcion = descripcion;
@@ -35,19 +35,48 @@ namespace PPAI_THE_LAST_DANCE.entity
 
         }
 
-        
+        public Bodega()
+        {
 
-        public string GetNombre() => nombre;
-        public string GetCoordenadas() => coordenadasUbicacion;
-        public string GetDescripcion() => descripcion;
-        public DateTime GetFecha() => fechaUltimaActualizacion;
-        public string GetHistoria() => historia;
-        public int GetPeriodoActualizacion() => periodoActualizacion;
+        }
+
+        public string CoordenadasUbicacion { get => coordenadasUbicacion; set => coordenadasUbicacion = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string FechaUltimaActualizacion { get => fechaUltimaActualizacion; set => fechaUltimaActualizacion = value; }
+        public string Historia { get => historia; set => historia = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int PeriodoActualizacion { get => periodoActualizacion; set => periodoActualizacion = value; }
+        public List<Vino> Vinos { get => vinos; set => vinos = value; }
+        public List<Siguiendo> Seguidores { get => seguidores; set => seguidores = value; }
+        public List<Maridaje> Maridajes { get => maridajes; set => maridajes = value; }
+
+
+
+        
         public void ActualizarVino() { }
-        public bool EsActualizable() => true;
-        public void SetFechaActualizacion(DateTime fecha) => fechaUltimaActualizacion = fecha;
+        public bool EsActualizable()
+        {
+            if (ValidarFechaActual()) 
+            {
+                return true;
+            }
+            else
+                return false;
+        }
         public bool TieneSetVino() => true;
-        public void ValidarFechaActual() { }
+        private bool ValidarFechaActual() 
+        {
+            DateTime fecha = DateTime.ParseExact(FechaUltimaActualizacion, "yyyy/MM/dd", null);
+            DateTime fechaNueva = fecha.AddMonths(PeriodoActualizacion);
+
+            if (fechaNueva >= DateTime.Now)
+            {
+                return true;
+            }
+            else
+                return false;
+            
+        }
     }
 
 }

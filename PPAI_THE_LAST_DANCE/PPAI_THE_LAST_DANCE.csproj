@@ -37,6 +37,7 @@
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\ADGestor.cs" />
+    <Compile Include="AccesoADatos\ADVinos.cs" />
     <Compile Include="boundary\InterfazAPIBodega.cs" />
     <Compile Include="entity\Bodega.cs" />
     <Compile Include="entity\Enofilo.cs" />
