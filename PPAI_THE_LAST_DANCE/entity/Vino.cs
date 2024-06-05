@@ -17,12 +17,19 @@ namespace PPAI_THE_LAST_DANCE.entity
         private string notaDeCataBodega;
         private int precioARS;
         private List<Maridaje> maridaje;
+        private List<TipoUva> tipoUva;
 
 
         private Bodega bodega;
         private List<Varietal> varietales = new List<Varietal>();
 
-        public Vino(int anada, DateTime bodegaActualizacion, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS)
+        
+        public Vino()
+        {
+
+        }
+
+        public Vino(int anada, DateTime bodegaActualizacion, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS, List<Maridaje> maridaje, List<TipoUva> tipoUva)
         {
             this.anada = anada;
             this.bodegaActualizacion = bodegaActualizacion;
@@ -30,10 +37,8 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.nombre = nombre;
             this.notaDeCataBodega = notaDeCataBodega;
             this.precioARS = precioARS;
-        }
-        public Vino()
-        {
-
+            this.maridaje = maridaje;
+            this.tipoUva = tipoUva;
         }
 
         public void CrearVarietal() { }
@@ -54,6 +59,7 @@ namespace PPAI_THE_LAST_DANCE.entity
         public string NotaDeCataBodega { get => notaDeCataBodega; set => notaDeCataBodega = value; }
         public int PrecioARS { get => precioARS; set => precioARS = value; }
         public List<Maridaje> Maridaje { get => maridaje; set => maridaje = value; }
+        public List<TipoUva> TipoUva { get => tipoUva; set => tipoUva = value; }
 
         public Boolean sosDeBodega(DatosEntrantesSistemaBodega vino)
         {
@@ -64,7 +70,7 @@ namespace PPAI_THE_LAST_DANCE.entity
             return false;
         }
 
-        public void crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
+        public Vino crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
         {
             this.anada = vino.Añada;
             this.imagenEtiqueta = vino.ImagenEtiqueta;
@@ -74,6 +80,8 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.maridaje = maridajes;
             this.varietales = crearVarietales(tiposuva, vino);
             this.bodegaActualizacion = DateTime.Now;
+
+            return this;
         }
 
         public List<Varietal> crearVarietales(List<TipoUva> tiposUvas, DatosEntrantesSistemaBodega vino)

@@ -12,10 +12,10 @@ public class DatosEntrantesSistemaBodega
     private string nombre;
     private string notaDeCataBodega;
     private int precioARS;
-    private List<String>? maridaje;
-    private List<DatosEntrantesVarietales>? varietal;
+    private List<String> maridaje;
+    private List<DatosEntrantesVarietales> varietal;
 
-    public DatosEntrantesSistemaBodega(int id, int añada, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS, List<String>? maridaje, List<DatosEntrantesVarietales>? varietal)
+    public DatosEntrantesSistemaBodega(int id, int añada, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS, List<string> maridaje, List<DatosEntrantesVarietales> varietal)
     {
         this.id = id;
         this.añada = añada;
@@ -33,6 +33,6 @@ public class DatosEntrantesSistemaBodega
     public string Nombre { get => nombre; set => nombre = value; }
     public string NotaDeCataBodega { get => notaDeCataBodega; set => notaDeCataBodega = value; }
     public int PrecioARS { get => precioARS; set => precioARS = value; }
-    public List<String>? Maridaje { get => maridaje; set => maridaje = value; }
-    public List<DatosEntrantesVarietales>? Varietal { get => varietal; set => varietal = value; }
+    public List<String> Maridaje { get => maridaje; set => maridaje = value; }
+    public List<DatosEntrantesVarietales> Varietal { get => varietal; set => varietal = value; }
 }

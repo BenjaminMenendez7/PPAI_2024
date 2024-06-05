@@ -35,7 +35,10 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodoAct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grillaVinos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grillaBodegas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaVinos)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -75,7 +78,8 @@
             this.grillaBodegas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Descripcion,
-            this.fecha});
+            this.fecha,
+            this.periodoAct});
             this.grillaBodegas.Location = new System.Drawing.Point(174, 66);
             this.grillaBodegas.Name = "grillaBodegas";
             this.grillaBodegas.Size = new System.Drawing.Size(441, 267);
@@ -103,11 +107,25 @@
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
+            // periodoAct
+            // 
+            this.periodoAct.HeaderText = "Periodo Actualizacicon";
+            this.periodoAct.Name = "periodoAct";
+            // 
+            // grillaVinos
+            // 
+            this.grillaVinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaVinos.Location = new System.Drawing.Point(174, 470);
+            this.grillaVinos.Name = "grillaVinos";
+            this.grillaVinos.Size = new System.Drawing.Size(441, 239);
+            this.grillaVinos.TabIndex = 8;
+            // 
             // pantImportadoraActVinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 800);
+            this.Controls.Add(this.grillaVinos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelSelec);
             this.Controls.Add(this.btnActualizar);
@@ -116,6 +134,7 @@
             this.Text = "pantImportadoraActVinos";
             this.Load += new System.EventHandler(this.pantImportadoraActVinos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaBodegas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaVinos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +149,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodoAct;
+        private System.Windows.Forms.DataGridView grillaVinos;
     }
 }

@@ -112,7 +112,12 @@ namespace PPAI_THE_LAST_DANCE.entity
         public void crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
         {
             Vino newVino = new Vino();
-            this.vinos.Add(newVino.crearVino(vino, maridajes, tiposuva, fechaActual));
+            this.vinos.Add(newVino.crearVino(maridajes, tiposuva, vino));  
+        }
+
+        public void SetFechaActualizacion()
+        {
+            this.fechaUltimaActualizacion = DateTime.Now.ToString();
         }
 
 

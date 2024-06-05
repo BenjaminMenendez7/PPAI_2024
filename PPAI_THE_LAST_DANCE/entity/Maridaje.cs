@@ -26,7 +26,7 @@ namespace PPAI_THE_LAST_DANCE.entity
                 return true;
             }
             return false;
-        };
+        }
     }
 
 }

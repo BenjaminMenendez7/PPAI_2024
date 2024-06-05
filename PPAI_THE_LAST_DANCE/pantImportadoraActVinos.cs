@@ -45,52 +45,54 @@ namespace PPAI_THE_LAST_DANCE
 
             foreach (Bodega bodega in bodegas)
             {
-                grillaBodegas.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion);
+                grillaBodegas.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion, bodega.PeriodoActualizacion);
             }
 
             SolicitarSeleccionBodega();
-
-
         }
-        public void MostrarResumenVinosImportados() { }
+
+        public void MostrarResumenVinosImportados() 
+        {
+            List<Bodega> bodegas = gestor.BuscarBodegaActualizacionDisp();
+
+            foreach (Bodega bodega in bodegas)
+            {
+                grillaVinos.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion, bodega.PeriodoActualizacion);
+            }
+        }
 
         public void SolicitarSeleccionBodega()
         {
             btnActualizar.Enabled = true;
         }
-        public void TomarSeleccionBodega()
+
+        public void TomarSeleccionBodega(DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             if (indice > -1)
             {
-
                 DataGridViewRow filaSeleccionada = grillaBodegas.Rows[indice];
                 string nombreBod = filaSeleccionada.Cells["nombre"].Value.ToString();
-
                 gestor.TomarSeleccionBodega(nombreBod);
-
             }
         }
-
-        
 
         private void grillaBodegas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             if (indice > -1)
             {
-
                 DataGridViewRow filaSeleccionada = grillaBodegas.Rows[indice];
                 string nombreBod = filaSeleccionada.Cells["nombre"].Value.ToString();
-
                 labelSelec.Text = nombreBod;
-
             }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            TomarSeleccionBodega();
+           
+            DataGridViewCellEventArgs eventArgs = new DataGridViewCellEventArgs(grillaBodegas.CurrentCell.ColumnIndex, grillaBodegas.CurrentCell.RowIndex);
+            TomarSeleccionBodega(eventArgs);
         }
 
         private void pantImportadoraActVinos_Load(object sender, EventArgs e)
