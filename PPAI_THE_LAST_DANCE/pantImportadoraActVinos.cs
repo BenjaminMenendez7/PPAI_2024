@@ -48,7 +48,7 @@ namespace PPAI_THE_LAST_DANCE
                 grillaBodegas.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion, bodega.PeriodoActualizacion);
             }
 
-            SolicitarSeleccionBodega();
+            ///SolicitarSeleccionBodega();
         }
 
         public void SolicitarSeleccionBodega()
@@ -64,10 +64,12 @@ namespace PPAI_THE_LAST_DANCE
                 DataGridViewRow filaSeleccionada = grillaBodegas.Rows[indice];
                 string nombreBod = filaSeleccionada.Cells["nombre"].Value.ToString();
                 gestor.TomarSeleccionBodega(nombreBod);
+                
             }
         }
         public void MostrarResumenVinosImportados(Bodega bod) 
         {
+            fechaAct.Text = bod.FechaUltimaActualizacion.ToString();
             foreach (Vino vino in bod.Vinos)
             {
                 grillaVinos.Rows.Add(vino.Nombre, vino.Anada, vino.PrecioARS, vino.NotaDeCataBodega);
@@ -92,11 +94,12 @@ namespace PPAI_THE_LAST_DANCE
            
             DataGridViewCellEventArgs eventArgs = new DataGridViewCellEventArgs(grillaBodegas.CurrentCell.ColumnIndex, grillaBodegas.CurrentCell.RowIndex);
             TomarSeleccionBodega(eventArgs);
+            
         }
 
         private void grillaVinos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
     }
 }

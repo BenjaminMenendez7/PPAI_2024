@@ -95,6 +95,7 @@ namespace PPAI_THE_LAST_DANCE.entity
 
         public void SetFechaActualizacion()
         {
+            
             this.fechaUltimaActualizacion = DateTime.Now.ToString();
         }
     }

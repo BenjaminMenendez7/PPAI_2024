@@ -41,6 +41,8 @@
             this.añada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notacata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAct = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grillaBodegas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaVinos)).BeginInit();
             this.SuspendLayout();
@@ -49,29 +51,26 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(344, 452);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(834, 376);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 17);
+            this.label2.Size = new System.Drawing.Size(133, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Bodega seleccionada:";
             // 
             // labelSelec
             // 
             this.labelSelec.AutoSize = true;
-            this.labelSelec.Location = new System.Drawing.Point(554, 452);
-            this.labelSelec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSelec.Location = new System.Drawing.Point(992, 376);
             this.labelSelec.Name = "labelSelec";
-            this.labelSelec.Size = new System.Drawing.Size(0, 16);
+            this.labelSelec.Size = new System.Drawing.Size(0, 13);
             this.labelSelec.TabIndex = 6;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Enabled = false;
-            this.btnActualizar.Location = new System.Drawing.Point(736, 445);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(1128, 371);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -87,11 +86,10 @@
             this.Descripcion,
             this.fecha,
             this.periodoAct});
-            this.grillaBodegas.Location = new System.Drawing.Point(130, 81);
-            this.grillaBodegas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grillaBodegas.Location = new System.Drawing.Point(98, 66);
             this.grillaBodegas.Name = "grillaBodegas";
             this.grillaBodegas.RowHeadersWidth = 102;
-            this.grillaBodegas.Size = new System.Drawing.Size(1104, 329);
+            this.grillaBodegas.Size = new System.Drawing.Size(1105, 267);
             this.grillaBodegas.TabIndex = 4;
             this.grillaBodegas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaBodegas_CellClick);
             // 
@@ -136,11 +134,10 @@
             this.añada,
             this.precio,
             this.notacata});
-            this.grillaVinos.Location = new System.Drawing.Point(130, 579);
-            this.grillaVinos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grillaVinos.Location = new System.Drawing.Point(98, 470);
             this.grillaVinos.Name = "grillaVinos";
             this.grillaVinos.RowHeadersWidth = 102;
-            this.grillaVinos.Size = new System.Drawing.Size(1104, 294);
+            this.grillaVinos.Size = new System.Drawing.Size(1105, 239);
             this.grillaVinos.TabIndex = 8;
             this.grillaVinos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaVinos_CellContentClick);
             // 
@@ -172,18 +169,37 @@
             this.notacata.Name = "notacata";
             this.notacata.Width = 250;
             // 
+            // fechaAct
+            // 
+            this.fechaAct.AutoSize = true;
+            this.fechaAct.Location = new System.Drawing.Point(992, 401);
+            this.fechaAct.Name = "fechaAct";
+            this.fechaAct.Size = new System.Drawing.Size(0, 13);
+            this.fechaAct.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(834, 401);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Fecha Actualizada:";
+            // 
             // pantImportadoraActVinos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1299, 766);
+            this.ClientSize = new System.Drawing.Size(1305, 753);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.fechaAct);
             this.Controls.Add(this.grillaVinos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelSelec);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.grillaBodegas);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "pantImportadoraActVinos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantImportadoraActVinos";
@@ -210,5 +226,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn añada;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn notacata;
+        private System.Windows.Forms.Label fechaAct;
+        private System.Windows.Forms.Label label1;
     }
 }

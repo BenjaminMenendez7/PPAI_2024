@@ -141,6 +141,8 @@ namespace PPAI_THE_LAST_DANCE.gestor
                 }
             }
             pantallaImportadoraActVinos.MostrarBodegas(bodegasActualizables);
+            pantallaImportadoraActVinos.SolicitarSeleccionBodega();
+
         }
 
         public void TomarSeleccionBodega(string nombreBodega)
