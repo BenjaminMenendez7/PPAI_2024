@@ -33,9 +33,10 @@
             // 
             // btnImportarActVin
             // 
-            this.btnImportarActVin.Location = new System.Drawing.Point(277, 176);
+            this.btnImportarActVin.Location = new System.Drawing.Point(369, 217);
+            this.btnImportarActVin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImportarActVin.Name = "btnImportarActVin";
-            this.btnImportarActVin.Size = new System.Drawing.Size(195, 78);
+            this.btnImportarActVin.Size = new System.Drawing.Size(260, 96);
             this.btnImportarActVin.TabIndex = 0;
             this.btnImportarActVin.Text = "Importar actualizacion vinos";
             this.btnImportarActVin.UseVisualStyleBackColor = true;
@@ -43,11 +44,13 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnImportarActVin);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
 

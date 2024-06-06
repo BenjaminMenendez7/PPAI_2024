@@ -13,3 +13,32 @@ C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANC
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CopyComplete
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Menu.resources
 C:\Users\Nacho\Desktop\UTN\Diseño de Sistemas\PPAI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pantImportadoraActVinos.resources
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.exe.config
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.exe
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.pdb
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.AssemblyReference.cache
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.SuggestedBindingRedirects.cache
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Menu.resources
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pantImportadoraActVinos.resources
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Properties.Resources.resources
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.GenerateResource.cache
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CoreCompileInputs.cache
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CopyComplete
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.exe
+C:\Users\leoav\Downloads\tpDSI\tpDSI\PPAI_2024\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pdb
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.exe.config
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.exe
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\bin\Debug\PPAI_THE_LAST_DANCE.pdb
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.AssemblyReference.cache
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Menu.resources
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pantImportadoraActVinos.resources
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.Properties.Resources.resources
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.GenerateResource.cache
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.csproj.CoreCompileInputs.cache
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE.9E2BD7E1.Up2Date
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.exe
+C:\Users\romin\Downloads\PPAI_THE_LAST_DANCE\PPAI_THE_LAST_DANCE\obj\Debug\PPAI_THE_LAST_DANCE.pdb

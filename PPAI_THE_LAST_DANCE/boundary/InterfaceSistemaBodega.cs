@@ -14,7 +14,7 @@ public class InterfaceSistemaBodega
     {
         
             //Vinos que se actualizan
-            DatosEntrantesSistemaBodega v6 = new DatosEntrantesSistemaBodega(6, 2020, "imagen6.jpg", "Torrontés", "Aromático con notas de jazmín y cítricos", 800, null, null);
+            DatosEntrantesSistemaBodega v6 = new DatosEntrantesSistemaBodega(6, 2020, "imagen6.jpg", "Torrontés", "Aromático con notas de jazmín y cítricos", 400, null, null);
             DatosEntrantesSistemaBodega v7 = new DatosEntrantesSistemaBodega(7, 2014, "imagen7.jpg", "Pinot Noir", "Elegante con notas de cereza y tierra", 3000, null, null);
             DatosEntrantesSistemaBodega v8 = new DatosEntrantesSistemaBodega(8, 2021, "imagen8.jpg", "Sauvignon Blanc", "Fresco con notas de manzana verde y pasto", 950, null, null);
             DatosEntrantesSistemaBodega v9 = new DatosEntrantesSistemaBodega(9, 2013, "imagen9.jpg", "Malbec Gran Reserva", "Complejo con notas de chocolate y frutos secos", 2500, null, null);

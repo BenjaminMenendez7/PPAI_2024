@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boundary\InterfaceNotificacion.cs" />
     <Compile Include="boundary\InterfaceSistemaBodega.cs" />
     <Compile Include="entity\Bodega.cs" />
     <Compile Include="entity\Enofilo.cs" />

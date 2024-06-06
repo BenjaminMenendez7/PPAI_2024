@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace PPAI_THE_LAST_DANCE.entity
 {
-
-
     public class Bodega
     {
         private string coordenadasUbicacion;
@@ -16,15 +14,9 @@ namespace PPAI_THE_LAST_DANCE.entity
         private string historia;
         private string nombre;
         private int periodoActualizacion;
-
         private List<Vino> vinos = new List<Vino>();
-        private List<Siguiendo> seguidores = new List<Siguiendo>();
-        private List<Maridaje> maridajes = new List<Maridaje>();
 
-
-
-
-        public Bodega(string coordenadasUbicacion, string descripcion, string fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion)
+        public Bodega(string coordenadasUbicacion, string descripcion, string fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion, List<Vino> vinos)
         {
             this.coordenadasUbicacion = coordenadasUbicacion;
             this.descripcion = descripcion;
@@ -32,12 +24,7 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.historia = historia;
             this.nombre = nombre;
             this.periodoActualizacion = periodoActualizacion;
-
-        }
-
-        public Bodega()
-        {
-
+            this.vinos = vinos;
         }
 
         public string CoordenadasUbicacion { get => coordenadasUbicacion; set => coordenadasUbicacion = value; }
@@ -47,12 +34,45 @@ namespace PPAI_THE_LAST_DANCE.entity
         public string Nombre { get => nombre; set => nombre = value; }
         public int PeriodoActualizacion { get => periodoActualizacion; set => periodoActualizacion = value; }
         public List<Vino> Vinos { get => vinos; set => vinos = value; }
-        public List<Siguiendo> Seguidores { get => seguidores; set => seguidores = value; }
-        public List<Maridaje> Maridajes { get => maridajes; set => maridajes = value; }
 
 
+        public bool EsActualizable()
+        {
+            if (ValidarFechaActual())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
-        
+        private bool ValidarFechaActual()
+        {
+            DateTime fecha = DateTime.ParseExact(FechaUltimaActualizacion, "yyyy/MM/dd", null);
+            DateTime fechaNueva = fecha.AddMonths(PeriodoActualizacion);
+
+            if (fechaNueva <= DateTime.Now)
+            {
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino)
+        {
+            foreach (Vino v in vinos)
+            {
+                if (v.sosDeBodega(vino))
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
         public void ActualizarVino(DatosEntrantesSistemaBodega vino)
         {
             foreach (Vino v in vinos)
@@ -64,49 +84,7 @@ namespace PPAI_THE_LAST_DANCE.entity
                     v.SetImagenEtiqueta(vino.ImagenEtiqueta);
                     v.SetFechaActualizacion(DateTime.Now);
                 }
-
             }
-        }
-        public bool EsActualizable()
-        {
-            if (ValidarFechaActual()) 
-            {
-                return true;
-            }
-            else
-                return false;
-        }
-        public bool TieneSetVino() => true;
-        private bool ValidarFechaActual() 
-        {
-            DateTime fecha = DateTime.ParseExact(FechaUltimaActualizacion, "yyyy/MM/dd", null);
-            DateTime fechaNueva = fecha.AddMonths(PeriodoActualizacion);
-
-            if (fechaNueva <= DateTime.Now)
-            {
-                return true;
-            }
-            else
-                return false;
-            
-        }
-
-        public Bodega GetDatos()
-        {
-            return this;
-        }
-
-        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino)
-        {
-            foreach (Vino v in vinos)
-            {
-                if (v.sosDeBodega(vino))
-                {
-                    return true;
-                }
-               
-            }
-            return false;
         }
 
         public void crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
@@ -119,9 +97,5 @@ namespace PPAI_THE_LAST_DANCE.entity
         {
             this.fechaUltimaActualizacion = DateTime.Now.ToString();
         }
-
-
-
     }
-
 }

@@ -24,6 +24,7 @@ namespace PPAI_THE_LAST_DANCE
             gestor = new GestorImportadorActVinos(this);
         }
 
+        //PASO1
         public void OpcionImportarActualizacionVinos()
         {
             HabilitarVentana();
@@ -34,31 +35,20 @@ namespace PPAI_THE_LAST_DANCE
             this.ShowDialog();
         }
 
-        public void GrillaVinosImportados() { }
-        public void LabelBodegaSeleccionada() { }
-        public void LabelVinosImportados() { }
-        public void ListaBodegasParaSeleccion() { }
-
-        public void MostrarBodegas()
+        private void pantImportadoraActVinos_Load(object sender, EventArgs e)
         {
-            List<Bodega> bodegas = gestor.BuscarBodegaActualizacionDisp();
+            this.gestor.OpcionImportarActualizacionVinos();
+        }
 
-            foreach (Bodega bodega in bodegas)
+        public void MostrarBodegas(List<Bodega> bod)
+        {
+
+            foreach (Bodega bodega in bod)
             {
                 grillaBodegas.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion, bodega.PeriodoActualizacion);
             }
 
             SolicitarSeleccionBodega();
-        }
-
-        public void MostrarResumenVinosImportados() 
-        {
-            List<Bodega> bodegas = gestor.BuscarBodegaActualizacionDisp();
-
-            foreach (Bodega bodega in bodegas)
-            {
-                grillaVinos.Rows.Add(bodega.Nombre, bodega.Descripcion, bodega.FechaUltimaActualizacion, bodega.PeriodoActualizacion);
-            }
         }
 
         public void SolicitarSeleccionBodega()
@@ -76,6 +66,15 @@ namespace PPAI_THE_LAST_DANCE
                 gestor.TomarSeleccionBodega(nombreBod);
             }
         }
+        public void MostrarResumenVinosImportados(Bodega bod) 
+        {
+            foreach (Vino vino in bod.Vinos)
+            {
+                grillaVinos.Rows.Add(vino.Nombre, vino.Anada, vino.PrecioARS, vino.NotaDeCataBodega);
+            }
+        }
+
+        ///  -------------------------------------------------------------------------------
 
         private void grillaBodegas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -95,10 +94,9 @@ namespace PPAI_THE_LAST_DANCE
             TomarSeleccionBodega(eventArgs);
         }
 
-        private void pantImportadoraActVinos_Load(object sender, EventArgs e)
+        private void grillaVinos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.gestor.OpcionImportarActualizacionVinos();
-            MostrarBodegas();
+
         }
     }
 }
