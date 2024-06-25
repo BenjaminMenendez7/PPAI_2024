@@ -50,7 +50,7 @@ namespace PPAI_THE_LAST_DANCE.entity
         public void SetPrecio(int precio) => precioARS = precio;
 
 
-        public Boolean sosDeBodega(DatosEntrantesSistemaBodega vino) // pasar pot string y anafa
+        public Boolean sosDeBodega(DatosEntrantesSistemaBodega vino) // pasar pot string y añada
         {
             if (this.Nombre == vino.Nombre)
             {

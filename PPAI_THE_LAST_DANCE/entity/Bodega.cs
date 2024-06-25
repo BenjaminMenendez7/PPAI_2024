@@ -60,7 +60,7 @@ namespace PPAI_THE_LAST_DANCE.entity
 
         }
 
-        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino)
+        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino) //este
         {
             foreach (Vino v in vinos)
             {
