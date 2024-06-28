@@ -18,12 +18,14 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.nombre = nombre;
         }
 
+        public TipoUva() { }
+
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Nombre { get => nombre; set => nombre = value; }
 
-        public Boolean SosTipoUva(String u)
+        public Boolean SosTipoUva(string tipoUvaNuevoVino)
         {
-            if (this.nombre == u )
+            if (this.nombre == tipoUvaNuevoVino )
             {
                 return true;
             }

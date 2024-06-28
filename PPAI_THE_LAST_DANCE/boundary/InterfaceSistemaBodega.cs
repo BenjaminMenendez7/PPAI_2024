@@ -6,38 +6,149 @@ using System.Threading.Tasks;
 
 public class InterfaceSistemaBodega
 {
-    private List<DatosEntrantesSistemaBodega> vinoList;
-
-    // retorna un listado de vinos a actualizar en un formato T definido por nosotros para que no sean directamente los objetos y tengamos
-    // que mapear
-    public List<DatosEntrantesSistemaBodega> ObtenerActualizacionesBodega()
+    private string nombre;
+    public InterfaceSistemaBodega(string nombre)
+    {
+        this.nombre = nombre;
+    }
+    internal List<DatosEntrantesSistemaBodega> ObtenerActualizacionesBodega(string nombreBodega)
     {
         
-            //Vinos que se actualizan
-            DatosEntrantesSistemaBodega v6 = new DatosEntrantesSistemaBodega(6, 2020, "imagen6.jpg", "Torrontés", "Aromático con notas de jazmín y cítricos", 400, null, null);
-            DatosEntrantesSistemaBodega v7 = new DatosEntrantesSistemaBodega(7, 2014, "imagen7.jpg", "Pinot Noir", "Elegante con notas de cereza y tierra", 3000, null, null);
-            DatosEntrantesSistemaBodega v8 = new DatosEntrantesSistemaBodega(8, 2021, "imagen8.jpg", "Sauvignon Blanc", "Fresco con notas de manzana verde y pasto", 950, null, null);
-            DatosEntrantesSistemaBodega v9 = new DatosEntrantesSistemaBodega(9, 2013, "imagen9.jpg", "Malbec Gran Reserva", "Complejo con notas de chocolate y frutos secos", 2500, null, null);
-            DatosEntrantesSistemaBodega v10 = new DatosEntrantesSistemaBodega(10, 2012, "imagen10.jpg", "Tempranillo", "Intenso con notas de frambuesa y cuero", 1400, null, null);
 
+        string[] tipoUva = new string[]
+        {
+                // Variedades tintas
+                "Merlot",
+                "Syrah",
+                "Cabernet Sauvignon",
+                "Pinot Noir",
+                "Malbec",
+                "Tempranillo",
+                "Zinfandel",
+                "Grenache",
+                "Nebbiolo",
+                "Sangiovese",
+                "Barbera",
+                // Variedades blancas
+                "Verdejo",
+                "Godello",
+                "Chardonnay",
+                "Sauvignon Blanc",
+                "Riesling",
+                "Pinot Grigio",
+                "Chenin Blanc",
+                "Gewürztraminer",
+                "Viognier",
+                "Albariño"
+        };
+        string[] notasDeCata = {
+            "Frutos rojos intensos, vainilla, suave.", "Notas cítricas, manzana verde, fresco.", "Fresas, florales, ligero y refrescante.",
+            "Frutos negros, taninos suaves, fácil de beber.", "Manzana, pera, burbujeante y elegante.", "Frutos maduros, roble, estructurado.",
+            "Pasas, miel, untuoso y delicioso.", "Ciruelas, vainilla, suave y equilibrado.", "Frutos rojos, especias, final persistente.",
+            "Melocotón, miel, frescura equilibrada."
+            };
+        string[] nombresVinosPopulares = new string[]
+        {
+                "Malbec Reserva",
+                "Chardonnay Gran Reserva",
+                "Cabernet Sauvignon",
+                "Merlot Clásico",
+                "Sauvignon Blanc Premium",
+                "Syrah Vendimia Seleccionada",
+                "Pinot Noir Joven",
+                "Tannat Roble",
+                "Rosé Brut Nature",
+                "Torrontés Dulce",
+                "Riesling Seco",
+                "Tempranillo Crianza",
+                "Zinfandel Old Vine",
+                "Grenache Blanc",
+                "Viognier Prestige",
+                "Petite Sirah Reserva",
+                "Carmenere Especial",
+                "Garnacha Joven",
+                "Verdejo Superior",
+                "Barbera d'Asti",
+                "Nebbiolo Langhe",
+                "Sangiovese Classico",
+                "Albariño Rías Baixas",
+                "Grüner Veltliner",
+                "Cava Brut Reserva",
+                "Champagne Brut Rosé",
+                "Prosecco Superiore",
+                "Moscato d'Asti",
+                "Chianti Riserva",
+                "Pinot Grigio delle Venezie",
 
-            DatosEntrantesVarietales var1 = new DatosEntrantesVarietales("Uva que produce vinos oscuros y ricos, con notas de ciruela, mora y chocolate.", 50, "Malbec");
-            DatosEntrantesVarietales var2 = new DatosEntrantesVarietales("Uva aromática que produce vinos blancos dulces o secos, con notas de manzana, melocotón y miel.", 20, "Riesling");
-            DatosEntrantesVarietales var3 = new DatosEntrantesVarietales("Uva aromática que produce vinos frescos y ácidos, con notas de hierba y frutas tropicales.", 80, "Sauvignon Blanc");
-            DatosEntrantesVarietales var4 = new DatosEntrantesVarietales("Una uva de piel gruesa y tánica, conocida por sus vinos intensos y longevos.", 50, "Cabernet Sauvignon");
-            DatosEntrantesVarietales var5 = new DatosEntrantesVarietales("Uva que produce vinos frutales y especiados, con sabores de fresa, zarzamora y pimienta.", 60, "Zinfandel");
-            DatosEntrantesVarietales var6 = new DatosEntrantesVarietales("Uva española que produce vinos con sabores de cereza, cuero y tabaco, con buena estructura.", 40, "Tempranillo");
-            //Vinos que se crean
-            DatosEntrantesSistemaBodega v11 = new DatosEntrantesSistemaBodega(11, 2018, "imagen11.jpg", "Bonarda", "Aromas de frutas maduras y especias", 1000, new List<String>() { "Pasta y Chianti", "Sushi y Sake" }, new List<DatosEntrantesVarietales>() { var1, var4 });
-            DatosEntrantesSistemaBodega v12 = new DatosEntrantesSistemaBodega(12, 2020, "imagen12.jpg", "Petit Verdot", "Notas de moras y especias con taninos firmes", 1350, new List<String>() { "Mariscos y Vino Blanco", "Pizza y Lambrusco" }, new List<DatosEntrantesVarietales>() { var3 });
-            DatosEntrantesSistemaBodega v13 = new DatosEntrantesSistemaBodega(13, 2016, "imagen13.jpg", "Viognier", "Aromas de melocotón y florales", 950, new List<String>() { "Ensalada y Sauvignon Blanc" }, new List<DatosEntrantesVarietales>() { var2, var5 });
-            DatosEntrantesSistemaBodega v14 = new DatosEntrantesSistemaBodega(14, 2019, "imagen14.jpg", "Carmenere", "Sabores de ciruela y chocolate con taninos suaves", 1150, new List<String>() { "Chocolate y Vino de Oporto" }, new List<DatosEntrantesVarietales>() { var6, var5 });
-            DatosEntrantesSistemaBodega v15 = new DatosEntrantesSistemaBodega(15, 2017, "imagen15.jpg", "Garnacha", "Aromas de frutos rojos y toques de especias", 1050, new List<String>() { "Pasta y Chianti", "Carne Roja y Cabernet Sauvignon" }, new List<DatosEntrantesVarietales>() { var4 });
+                "Lambrusco Amabile",
+                "Gewürztraminer Select",
+                "Gamay Beaujolais Nouveau",
+                "Porto Vintage",
+                "Shiraz Barossa Valley",
+                "Chenin Blanc Old Vine",
+                "Pinotage Reserve",
+                "Fiano di Avellino",
+                "Monastrell Reserva",
+                "Mencia Bierzo",
+                "Blaufränkisch Classic",
+                "Cortese di Gavi",
+                "Arneis Langhe",
+                "Nero d'Avola Sicilia",
+                "Touriga Nacional",
+                "Negroamaro Salento",
+                "Aglianico del Vulture",
+                "Cannonau di Sardegna",
+                "Dolcetto d'Alba",
+                "Lacrima di Morro d'Alba",
+                "Petit Verdot",
+                "Bonarda Argentina",
+                "Marsanne Roussanne",
+                "Pedro Ximénez Dulce",
+                "Torrontés Cafayate"
+        };
 
+        Random rand = new Random();
 
-            this.vinoList = new List<DatosEntrantesSistemaBodega> { v6, v7, v8, v9, v10, v11, v12, v13, v14, v15 };
-            return vinoList;
-        
-        
+        List<DatosEntrantesSistemaBodega> vinos = new List<DatosEntrantesSistemaBodega>();
+
+        for (int i = 0; i < 10; i++)
+        {
+            // Generar datos para el vino
+            int añoAñada = rand.Next(1950, 2025);
+            DateTime fechaActualizacion = DateTime.Now;
+            string imagenEtiqueta = $"Etiqueta_{i}";
+            string nombre = nombresVinosPopulares[rand.Next(0, nombresVinosPopulares.Length - 1)];
+            string notaDeCataBodega = notasDeCata[i];
+            int precioARS = rand.Next(500, 50000);
+
+            DatosEntrantesSistemaBodega vino = new DatosEntrantesSistemaBodega(añoAñada.ToString(), fechaActualizacion, imagenEtiqueta, nombre, notaDeCataBodega, precioARS);
+
+            // Añadir entre 0 y  3 maridajes
+            int numMaridajes = rand.Next(0, 3);
+            List<string> maridajes = new List<string>();
+            for (int j = 0; j < numMaridajes; j++)
+            {
+                string m = "Maridaje" + (j + 1);
+                maridajes.Add(m);
+            }
+            vino.Maridaje = maridajes;
+
+            // Añadir entre 1 y 5 varietales
+            int numVarietales = rand.Next(1, 6);
+            List<string[]> varietales = new List<string[]>();
+            for (int j = 0; j < numVarietales; j++)
+            {
+                string nV = $"Varietal : {j}";
+                string dV = $"Vino varietal con predominancia de una variedad de uva";
+                string pC = rand.Next(80, 101).ToString(); // Entre 80% y 100%
+                string tU = tipoUva[rand.Next(0, tipoUva.Length)];
+
+                string[] v = new string[] { nV, dV, pC, tU };
+                varietales.Add(v);
+            }
+            vinos.Add(vino);
+            vino.Varietal = varietales;
+        }
+        return vinos;
     }
 }

@@ -8,37 +8,35 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class Bodega
     {
-        private string coordenadasUbicacion;
         private string descripcion;
-        private string fechaUltimaActualizacion;
+        private DateTime fechaUltimaActualizacion;
         private string historia;
         private string nombre;
         private int periodoActualizacion;
-        private List<Vino> vinos = new List<Vino>();
+        private List<Vino> vinos;
 
-        public Bodega(string coordenadasUbicacion, string descripcion, string fechaUltimaActualizacion, string historia, string nombre, int periodoActualizacion, List<Vino> vinos)
+        public Bodega(string nombre, string descripcion, DateTime fechaUltimaActualizacion, int periodoActualizacion, string historia)
         {
-            this.coordenadasUbicacion = coordenadasUbicacion;
+            this.nombre = nombre;
             this.descripcion = descripcion;
             this.fechaUltimaActualizacion = fechaUltimaActualizacion;
-            this.historia = historia;
-            this.nombre = nombre;
             this.periodoActualizacion = periodoActualizacion;
-            this.vinos = vinos;
+            this.historia = historia;
+            this.vinos = new List<Vino>();
+
         }
 
-        public string CoordenadasUbicacion { get => coordenadasUbicacion; set => coordenadasUbicacion = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public string FechaUltimaActualizacion { get => fechaUltimaActualizacion; set => fechaUltimaActualizacion = value; }
+        public DateTime FechaUltimaActualizacion { get => fechaUltimaActualizacion; set => fechaUltimaActualizacion = value; }
         public string Historia { get => historia; set => historia = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int PeriodoActualizacion { get => periodoActualizacion; set => periodoActualizacion = value; }
         public List<Vino> Vinos { get => vinos; set => vinos = value; }
 
 
-        public bool EsActualizable()
+        public bool EsActualizable(DateTime fechaActual)
         {
-            if (ValidarFechaActual())
+            if (ValidarFechaActual(fechaActual))
             {
                 return true;
             }
@@ -46,12 +44,12 @@ namespace PPAI_THE_LAST_DANCE.entity
                 return false;
         }
 
-        private bool ValidarFechaActual()
+        private bool ValidarFechaActual(DateTime fechaActual)
         {
-            DateTime fecha = DateTime.ParseExact(FechaUltimaActualizacion, "yyyy/MM/dd", null);
+            DateTime fecha = FechaUltimaActualizacion;
             DateTime fechaNueva = fecha.AddMonths(PeriodoActualizacion);
 
-            if (fechaNueva <= DateTime.Now)
+            if (fechaNueva <= fechaActual)
             {
                 return true;
             }
@@ -60,11 +58,11 @@ namespace PPAI_THE_LAST_DANCE.entity
 
         }
 
-        public Boolean tenesEsteVino(DatosEntrantesSistemaBodega vino) //este
+        public Boolean tenesEsteVino(string nombreVino) //este
         {
-            foreach (Vino v in vinos)
+            foreach (Vino vinoDeBodega in this.vinos)
             {
-                if (v.sosDeBodega(vino))
+                if (vinoDeBodega.sosDeBodega(nombreVino))
                 {
                     return true;
                 }
@@ -73,30 +71,31 @@ namespace PPAI_THE_LAST_DANCE.entity
             return false;
         }
 
-        public void ActualizarVino(DatosEntrantesSistemaBodega vino)
+        public void ActualizarVino(string nombre, int precio, string nota, string img, DateTime fecha)
         {
             foreach (Vino v in vinos)
             {
-                if (v.sosDeBodega(vino))
+                if (v.sosDeBodega(nombre)) // arreglar cambiar depend
                 {
-                    v.SetPrecio(vino.PrecioARS);
-                    v.SetNotaCata(vino.NotaDeCataBodega);
-                    v.SetImagenEtiqueta(vino.ImagenEtiqueta);
-                    v.SetFechaActualizacion(DateTime.Now);
+                    v.SetPrecio(precio);
+                    v.SetNotaCata(nota);
+                    v.SetImagenEtiqueta(img);
+                    v.SetFechaActualizacion(fecha);
                 }
             }
         }
 
-        public void crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
+        public void crearVino(string añada, DateTime fecha, string img, string nombre, string nota, int precio, List<Maridaje> maridajesParaNuevoVino, List<TipoUva> tipoUvasParaNuevoVino, List<string[]> varietales, Bodega b)
         {
-            Vino newVino = new Vino();
-            this.vinos.Add(newVino.crearVino(maridajes, tiposuva, vino));  
+            Vino nuevoVino = new Vino(añada, fecha, img, nombre, nota, precio, b);
+            nuevoVino.Maridaje = maridajesParaNuevoVino;
+            nuevoVino.crearVarietal(varietales, tipoUvasParaNuevoVino);
+
         }
 
-        public void SetFechaActualizacion()
+        public void SetFechaActualizacion(DateTime fecha)
         {
-            
-            this.fechaUltimaActualizacion = DateTime.Now.ToString();
+            this.FechaUltimaActualizacion = fecha;
         }
     }
 }

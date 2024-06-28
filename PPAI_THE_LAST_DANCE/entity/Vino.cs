@@ -8,7 +8,7 @@ namespace PPAI_THE_LAST_DANCE.entity
 {
     public class Vino
     {
-        private int anada;
+        private string anada;
         private DateTime bodegaActualizacion;
         private string imagenEtiqueta;
         private string nombre;
@@ -16,12 +16,11 @@ namespace PPAI_THE_LAST_DANCE.entity
         private int precioARS;
         private List<Maridaje> maridaje;
         private List<Varietal> varietales = new List<Varietal>();
+        private Bodega bodega;
 
-        public Vino()
-        {
-        }
 
-        public Vino(int anada, DateTime bodegaActualizacion, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS, List<Maridaje> maridaje, List<Varietal> varietales)
+
+        public Vino(string anada, DateTime bodegaActualizacion, string imagenEtiqueta, string nombre, string notaDeCataBodega, int precioARS, Bodega bodega)
         {
             this.anada = anada;
             this.bodegaActualizacion = bodegaActualizacion;
@@ -29,10 +28,14 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.nombre = nombre;
             this.notaDeCataBodega = notaDeCataBodega;
             this.precioARS = precioARS;
-            this.maridaje = maridaje;
-            this.varietales = varietales;
+            this.Bodega = bodega;
+            this.maridaje = new List<Maridaje>();
+            this.varietales = new List<Varietal>();
         }
-        public int Anada { get => anada; set => anada = value; }
+        public Vino()
+        {
+        }
+        public string Anada { get => anada; set => anada = value; }
         public DateTime BodegaActualizacion { get => bodegaActualizacion; set => bodegaActualizacion = value; }
         public string ImagenEtiqueta { get => imagenEtiqueta; set => imagenEtiqueta = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -40,7 +43,7 @@ namespace PPAI_THE_LAST_DANCE.entity
         public int PrecioARS { get => precioARS; set => precioARS = value; }
         public List<Maridaje> Maridaje { get => maridaje; set => maridaje = value; }
         public List<Varietal> Varietales { get => varietales; set => varietales = value; }
-
+        public Bodega Bodega { get => bodega; set => bodega = value; }
 
         public void CrearVarietal() { }
         public void New() { }
@@ -50,44 +53,38 @@ namespace PPAI_THE_LAST_DANCE.entity
         public void SetPrecio(int precio) => precioARS = precio;
 
 
-        public Boolean sosDeBodega(DatosEntrantesSistemaBodega vino) // pasar pot string y añada
+        public Boolean sosDeBodega(string nombreVino) 
         {
-            if (this.Nombre == vino.Nombre)
+            if (this.Nombre == nombreVino)
             {
                 return true;
             }
             return false;
         }
 
-        public Vino crearVino(List<Maridaje> maridajes, List<TipoUva> tiposuva, DatosEntrantesSistemaBodega vino)
+        public void crearVino(string añada, DateTime fecha, string img, string nombre, string nota, int precio, List<Maridaje> maridajesParaNuevoVino, List<TipoUva> tipoUvasParaNuevoVino, List<string[]> varietales, Bodega b)
         {
-            this.anada = vino.Añada;
-            this.imagenEtiqueta = vino.ImagenEtiqueta;
-            this.nombre = vino.Nombre;
-            this.notaDeCataBodega = vino.NotaDeCataBodega;
-            this.precioARS = vino.PrecioARS;
-            this.maridaje = maridajes;
-            this.varietales = crearVarietales(tiposuva, vino);
-            this.bodegaActualizacion = DateTime.Now;
+            Vino nuevoVino = new Vino(añada, fecha, img, nombre, nota, precio, b);
+            nuevoVino.Maridaje = maridajesParaNuevoVino;
+            nuevoVino.crearVarietal(varietales, tipoUvasParaNuevoVino);
 
-            return this;
         }
 
-        public List<Varietal> crearVarietales(List<TipoUva> tiposUvas, DatosEntrantesSistemaBodega vino)
+        public void crearVarietal(List<string[]> varietales, List<TipoUva> tiposDeUva)
         {
-
-            List<Varietal> Rvarietal = new List<Varietal>();
-            foreach (TipoUva tipoUva in tiposUvas)
+            foreach (string[] varietal in varietales)
             {
-                foreach (DatosEntrantesVarietales dato in vino.Varietal)
+                string nV = varietal[0];
+                string dV = varietal[1];
+                int pC = int.Parse(varietal[2]);
+                TipoUva uva = new TipoUva();
+                for (int i = 0; i < tiposDeUva.Count; i++)
                 {
-                    if (tipoUva.Nombre == dato.TipoUva)
-                    {
-                        Rvarietal.Add(new Varietal(dato.Descripcion, dato.PorcentajeVarietal, tipoUva));
-                    }
+                    uva = tiposDeUva[i];
                 }
+                Varietal v = new Varietal(nV, dV, pC, uva);
+                this.Varietales.Add(v);
             }
-            return Rvarietal;
         }
     }
 }

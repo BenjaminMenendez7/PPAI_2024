@@ -19,9 +19,9 @@ namespace PPAI_THE_LAST_DANCE.entity
             this.nombre = nombre;
         }
 
-        public Boolean SosMaridaje(String m) 
+        public Boolean SosMaridaje(String maridaje) 
         {
-            if (this.nombre == m)
+            if (this.nombre == maridaje)
             {
                 return true;
             }
